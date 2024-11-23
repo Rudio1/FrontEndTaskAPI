@@ -1,0 +1,25 @@
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Editar Tarefa</h5>
+      <button type="button" class="btn-close" (click)="onClose()"></button>
+    </div>
+
+    <div class="modal-body">
+      <label for="taskName">Nome:</label>
+      <input id="taskName" [(ngModel)]="tarefa.name" type="text" class="form-control" />
+
+      <label for="category" class="form-label">Categoria</label>
+      <select id="category" class="form-control" [(ngModel)]="tarefa.category" name="category">
+        <option *ngFor="let category of categories" [value]="category.name">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="onSave()">Salvar</button>
+      <button type="button" class="btn btn-secondary" (click)="onClose()">Fechar</button>
+    </div>
+  </div>
+</div>

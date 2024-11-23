@@ -1,0 +1,11 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-button {
+    align-self: flex-end; /* Posiciona o botão à direita */
+    margin-bottom: 10px; /* Espaçamento entre botão e título */
+}

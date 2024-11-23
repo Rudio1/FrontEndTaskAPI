@@ -1,0 +1,42 @@
+.task {
+    background: #f4f4f4;
+    margin: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.task.reminder {
+    border-left: 5px solid green;
+}
+
+.task.incomplete {
+    border-left: 5px solid gray;
+}
+
+.task h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.badge.bg-success {
+    background-color: green;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.badge.bg-danger {
+    background-color: gray;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+
+.task.reminder {
+    opacity: 0.5; /* Torna a tarefa mais transparente */
+    text-decoration: line-through; /* Risca o texto para indicar que está concluída */
+    color: #6c757d; /* Altera a cor do texto para um tom mais cinza */
+  }
+  

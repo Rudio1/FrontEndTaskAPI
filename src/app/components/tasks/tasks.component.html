@@ -1,0 +1,45 @@
+<app-add-task 
+  [categories]="categories" 
+  (onAddTask)="AddTask($event)">
+</app-add-task>
+
+<div style="margin-left: 7px;">
+  <input 
+    type="checkbox" 
+    [checked]="mostrarInativas" 
+    (change)="onToggleMostrarInativas()" 
+  />
+  Mostrar Somente Tarefas Inativas
+</div>
+
+<!-- Exibe as tarefas da página atual -->
+<div *ngFor="let tarefa of tarefasParaPagina">
+  <app-task-item 
+    [tarefa]="tarefa" 
+    [categories]="categories"
+    [mostrarInativas]="mostrarInativas"
+    (onDeleteTask)="deleteTask($event)" 
+    (onToggleConcluido)="toggleConcluiido($event)"
+    (onReactive)="onReactivate($event)"
+    (onEditTask)="onEditTask($event)">
+  </app-task-item>
+</div>
+
+<!-- Contêiner de paginação alinhado à direita -->
+<div class="pagination-container" *ngIf="totalDePaginas > 1">
+  <button 
+    (click)="paginaAnterior()" 
+    [disabled]="paginaAtual === 1" 
+    class="pagination-button">
+    <i class="fa fa-arrow-left"></i> Anterior
+  </button>
+  
+  <span style="margin-top: 11px;">Página {{ paginaAtual }} de {{ totalDePaginas }}</span>
+  
+  <button 
+    (click)="proximaPagina()" 
+    [disabled]="paginaAtual === totalDePaginas" 
+    class="pagination-button">
+    Próxima <i class="fa fa-arrow-right"></i>
+  </button>
+</div>

@@ -1,0 +1,46 @@
+<div *ngIf="taskStatus" class="task" 
+     (dblclick)="onToggle(tarefa)" 
+     [ngClass]="{ 
+       reminder: tarefa.isCompleted, 
+       incomplete: !tarefa.isCompleted 
+     }">
+    <h3>
+        {{ tarefa.name }}
+
+        <span class="task-icons" style="margin-left: 10px; display: inline-flex; gap: 10px;">
+        <!-- Ícone de Edição -->
+        <fa-icon 
+            *ngIf="tarefa.active" 
+            [icon]="faEdit" 
+            [ngStyle]="{'color': 'blue', 'cursor': 'pointer'}" 
+            (click)="onEdit(tarefa)">
+        </fa-icon>
+
+        <!-- Ícone para deletar a tarefa -->
+        <fa-icon 
+            *ngIf="tarefa.active" 
+            [icon]="faTimes" 
+            [ngStyle]="{'color': 'red', 'cursor': 'pointer'}" 
+            (click)="onDelete(tarefa)">
+        </fa-icon>
+
+        <!-- Ícone para reativar a tarefa quando estiver inativa -->
+        <fa-icon 
+            *ngIf="!tarefa.active" 
+            [icon]="faRedo" 
+            [ngStyle]="{'color': 'green', 'cursor': 'pointer'}" 
+            (click)="onReactivate(tarefa)">
+        </fa-icon>
+        </span>
+    </h3>
+  
+  
+    <span *ngIf="tarefa.isCompleted" class="badge bg-success">Completa</span>
+    <span *ngIf="!tarefa.isCompleted" class="badge bg-secondary">Incompleta</span>
+  
+    <span style="margin-left: 10px;" *ngIf="!tarefa.active" class="badge bg-danger">Inativo</span>
+  
+    <p>{{ getCategoryName() }}</p>
+
+    
+</div>
