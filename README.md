@@ -1,6 +1,7 @@
 # Kanban Board - Gerenciador de Tarefas
 
 Uma aplicação web moderna para gerenciamento de tarefas no estilo Kanban, desenvolvida com Angular. Este repositório contém o frontend da aplicação, que consome uma API RESTful desenvolvida em .NET Core disponível em um [projeto separado](https://github.com/Rudio1/CrudTaskAPI).
+![image](https://github.com/user-attachments/assets/3ec14261-0594-4f7a-8c7b-7fadcc767fc6)
 
 ## 🚀 Funcionalidades
 
