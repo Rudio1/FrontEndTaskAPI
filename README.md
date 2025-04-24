@@ -2,8 +2,6 @@
 
 Uma aplicação web moderna para gerenciamento de tarefas no estilo Kanban, desenvolvida com Angular. Este repositório contém o frontend da aplicação, que consome uma API RESTful desenvolvida em .NET Core disponível em um [projeto separado](https://github.com/Rudio1/CrudTaskAPI).
 
-![Kanban Board Preview](preview.png)
-
 ## 🚀 Funcionalidades
 
 - **Quadro Kanban Interativo**
@@ -113,15 +111,3 @@ O sistema utiliza um esquema de cores intuitivo para diferentes estados:
 As cores podem ser personalizadas através dos arquivos de estilo.
 
 
-## ✨ Próximos Passos
-
-- [ ] Implementar autenticação de usuários
-- [ ] Adicionar suporte a anexos nas tarefas
-- [ ] Implementar sistema de notificações
-- [ ] Adicionar métricas e relatórios
-- [ ] Melhorar a responsividade para dispositivos móveis
-
-## 📞 Suporte
-
-
-- Backend: Visite o [repositório da API](https://github.com/Rudio1/CrudTaskAPI)
