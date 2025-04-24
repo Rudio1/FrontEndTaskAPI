@@ -1,58 +1,127 @@
-# 🖥️ FrontEndTaskAPI
+# Kanban Board - Gerenciador de Tarefas
 
-Front-end desenvolvido em ReactJS para consumir a API de gerenciamento de tarefas fornecida pelo projeto CrudTaskAPI.
+Uma aplicação web moderna para gerenciamento de tarefas no estilo Kanban, desenvolvida com Angular. Este repositório contém o frontend da aplicação, que consome uma API RESTful desenvolvida em .NET Core disponível em um [projeto separado](https://github.com/Rudio1/CrudTaskAPI).
 
----
+![Kanban Board Preview](preview.png)
 
-## 📌 Tecnologias Utilizadas
+## 🚀 Funcionalidades
 
-- ReactJS
-- Axios
-- Vite
-- Tailwind CSS
+- **Quadro Kanban Interativo**
+  - Arrastar e soltar tarefas entre colunas (A Fazer, Em Progresso, Concluído)
+  - Visualização clara do progresso das tarefas
+  - Indicadores visuais por status
 
----
+- **Gerenciamento de Tarefas**
+  - Criar novas tarefas com nome, descrição e categoria
+  - Editar tarefas existentes
+  - Mover tarefas entre diferentes estágios
+  - Excluir tarefas
 
-## 📖 Funcionalidades
+- **Categorização e Filtros**
+  - Organizar tarefas por categorias
+  - Filtrar tarefas por categoria
+  - Indicadores visuais por prioridade (Alta, Média, Baixa)
 
-- Exibir lista de tarefas
-- Adicionar nova tarefa
-- Editar tarefa existente
-- Deletar tarefa
+## 🛠️ Tecnologias Utilizadas
 
----
+### Frontend (Este Repositório)
+- Angular 19
+- Angular Material CDK (Drag and Drop)
+- Bootstrap Icons
+- TypeScript
+- SCSS/CSS para estilização
 
-## 📦 Como Executar o Front-end
+### Backend (Repositório Separado)
+> ⚠️ **Nota**: O backend está disponível em um [repositório separado](https://github.com/Rudio1/CrudTaskAPI)
+- .NET Core
+- Entity Framework Core
+- SQL Server
+- RESTful API
 
-### 📑 Pré-requisitos:
-- Node.js 18+
-- NPM ou Yarn
+## 📋 Pré-requisitos
 
-### 📥 Clone o projeto
+- Node.js (versão 18 ou superior)
+- Angular CLI (versão 19)
+- Backend da aplicação rodando localmente (ver [CrudTaskAPI](https://github.com/Rudio1/CrudTaskAPI))
 
+## 🔧 Instalação e Configuração
+
+### Frontend (Este Repositório)
+
+1. Clone o repositório:
+\`\`\`bash
 git clone https://github.com/Rudio1/FrontEndTaskAPI.git
+\`\`\`
+
+2. Navegue até a pasta do projeto:
+\`\`\`bash
 cd FrontEndTaskAPI
+\`\`\`
 
-### 📦 Instale as dependências
-
+3. Instale as dependências:
+\`\`\`bash
 npm install
+\`\`\`
 
-### ⚙️ Configure a URL da API em `src/api/api.js`
+4. Inicie a aplicação:
+\`\`\`bash
+ng serve
+\`\`\`
 
-const api = axios.create({
-  baseURL: 'https://localhost:5001/api'
-});
+A aplicação estará disponível em `http://localhost:4200`
 
-### ▶️ Rode a aplicação
+### Backend (Repositório Separado)
 
-npm run dev
+Para configurar e executar o backend da aplicação, siga as instruções no [repositório da API](https://github.com/Rudio1/CrudTaskAPI).
 
-Acesse em:
-http://localhost:5173/
+A API deve estar rodando em `http://localhost:5001` para que o frontend funcione corretamente.
 
----
+## 🔗 Integração com o Backend
 
-## 🔗 Integração com o Back-end
+Este frontend foi desenvolvido para trabalhar em conjunto com a API RESTful do projeto [CrudTaskAPI](https://github.com/Rudio1/CrudTaskAPI). Certifique-se de que:
 
-Este front-end consome a API RESTful hospedada no projeto:
-👉 https://github.com/Rudio1/CrudTaskAPI
+1. O backend está rodando antes de iniciar o frontend
+2. A URL base da API está configurada corretamente no serviço (`http://localhost:5001/api`)
+3. Todas as rotas da API estão acessíveis
+
+## 📡 API Endpoints
+
+> ⚠️ **Nota**: Estes endpoints são fornecidos pela API do [CrudTaskAPI](https://github.com/Rudio1/CrudTaskAPI)
+
+### Tarefas
+- `GET /api/chore` - Lista todas as tarefas
+- `GET /api/chore/{id}` - Obtém uma tarefa específica
+- `POST /api/chore` - Cria uma nova tarefa
+- `PUT /api/chore/{id}` - Atualiza uma tarefa existente
+- `DELETE /api/chore/{id}` - Remove uma tarefa
+
+### Categorias
+- `GET /api/category` - Lista todas as categorias
+- `GET /api/category/{id}` - Obtém uma categoria específica com suas tarefas
+- `POST /api/category` - Cria uma nova categoria
+- `PUT /api/category/{id}` - Atualiza uma categoria existente
+- `DELETE /api/category/{id}` - Remove uma categoria
+
+## 🎨 Personalização
+
+O sistema utiliza um esquema de cores intuitivo para diferentes estados:
+
+- **A Fazer**: Borda azul (#2196F3)
+- **Em Progresso**: Borda amarela (#FFC107)
+- **Concluído**: Borda verde (#4CAF50)
+
+As cores podem ser personalizadas através dos arquivos de estilo.
+
+
+## ✨ Próximos Passos
+
+- [ ] Implementar autenticação de usuários
+- [ ] Adicionar suporte a anexos nas tarefas
+- [ ] Implementar sistema de notificações
+- [ ] Adicionar métricas e relatórios
+- [ ] Melhorar a responsividade para dispositivos móveis
+
+## 📞 Suporte
+
+
+- Backend: Visite o [repositório da API](https://github.com/Rudio1/CrudTaskAPI)

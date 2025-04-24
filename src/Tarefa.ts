@@ -6,4 +6,6 @@ export interface Tarefa{
     isCompleted: boolean;
     categoryId: number;
     category?: string;
+    createdAt?: string;
+    progress: number;
 }

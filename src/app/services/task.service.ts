@@ -9,10 +9,10 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'https://localhost:7215/api/chore';
-  private apiUrlCategories = 'https://localhost:7215/api/category'
+  private apiUrl = 'http://localhost:5001/api/chore';
+  private apiUrlCategories = 'http://localhost:5001/api/category';
 
-  constructor(private http: HttpClient, private toaster : ToastrService) { }
+  constructor(private http: HttpClient, private toaster: ToastrService) { }
 
   getTasks(): Observable<Tarefa[]> {
     return this.http.get<Tarefa[]>(this.apiUrl);
@@ -32,6 +32,12 @@ export class TaskService {
 
   getCategories(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(this.apiUrlCategories);
+  }
+
+  getCategoryWithTasks(categoryId: number): Observable<Categoria> {
+    return this.http.get<Categoria>(`${this.apiUrlCategories}/${categoryId}`).pipe(
+      tap(response => console.log('Resposta da API de categoria:', response))
+    );
   }
 
   reactivateTask(tarefaId: number): Observable<Tarefa> {

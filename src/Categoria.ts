@@ -1,4 +1,7 @@
+import { Tarefa } from './Tarefa';
+
 export interface Categoria {
     id? : number,
-    name : string
+    name : string,
+    chores?: Tarefa[]
 }
