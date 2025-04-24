@@ -83,24 +83,6 @@ Este frontend foi desenvolvido para trabalhar em conjunto com a API RESTful do p
 2. A URL base da API está configurada corretamente no serviço (`http://localhost:5001/api`)
 3. Todas as rotas da API estão acessíveis
 
-## 📡 API Endpoints
-
-> ⚠️ **Nota**: Estes endpoints são fornecidos pela API do [CrudTaskAPI](https://github.com/Rudio1/CrudTaskAPI)
-
-### Tarefas
-- `GET /api/chore` - Lista todas as tarefas
-- `GET /api/chore/{id}` - Obtém uma tarefa específica
-- `POST /api/chore` - Cria uma nova tarefa
-- `PUT /api/chore/{id}` - Atualiza uma tarefa existente
-- `DELETE /api/chore/{id}` - Remove uma tarefa
-
-### Categorias
-- `GET /api/category` - Lista todas as categorias
-- `GET /api/category/{id}` - Obtém uma categoria específica com suas tarefas
-- `POST /api/category` - Cria uma nova categoria
-- `PUT /api/category/{id}` - Atualiza uma categoria existente
-- `DELETE /api/category/{id}` - Remove uma categoria
-
 ## 🎨 Personalização
 
 O sistema utiliza um esquema de cores intuitivo para diferentes estados:
